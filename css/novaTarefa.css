@@ -1,0 +1,27 @@
+input {
+	display: block;
+	margin: 10px 0;
+	height: 40px;
+}
+
+.formulario-tarefa input[type="text"] {
+	width: 100%;
+	max-width: 350px;
+	padding-left: 10px;
+	outline: none;
+}
+
+.formulario-tarefa input[type="submit"] {
+	width: 150px;
+	border: none;
+	background: transparent;
+	border: 1px solid #044053;
+	color: #044053;
+	cursor: pointer;
+	transition: .5s;
+}
+
+.formulario-tarefa input[type="submit"]:hover {
+	background: #044053;
+	color: #fff;
+}

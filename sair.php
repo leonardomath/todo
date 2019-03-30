@@ -1,0 +1,1 @@
+<?php require'classes/Usuario.php'; session_start(); Usuario::sair(); ?>
