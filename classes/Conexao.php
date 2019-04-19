@@ -7,7 +7,7 @@ class Conexao {
 	public static function conectar() {
 		if(self::$conexao == null) {
 			try {
-				self::$conexao = new PDO("mysql:dbname=todo;host=localhost","root","");
+				self::$conexao = new PDO("mysql:dbname=".DATABASE.";host=".HOST,USER,PASS);
 		 	} catch (PDOException $e) {
 				echo "Erro ".$e->getMessage();
 			}

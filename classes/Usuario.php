@@ -24,10 +24,21 @@ class Usuario {
             $data_user = $sql->fetch();
             $_SESSION['email'] = $data_user['email'];
             $_SESSION['id_usuario'] = $data_user['id'];
-            header("Location: tarefas.php");
+            header("Location:".PATH."tarefas");
         } else {
-            header("Location: index.php?error-1"); // Erri de dados incorretos
+            header("Location:".PATH."?erroCredencials"); // Erri de dados incorretos
         }
+    }
+
+    public static function getLastInsertedId($email) {
+        $sql = Conexao::conectar()->prepare("SELECT id FROM usuarios WHERE email = ?");
+        $sql->execute(array($email));
+        if($sql->rowCount() > 0 ){
+            $id_usuario = $sql->fetch();
+        } else {
+            $id_usuario = NUlll;
+        }
+        return $id_usuario[0];
     }
 
     public static function cadastro($email,$nome,$senha) {
@@ -36,8 +47,8 @@ class Usuario {
         if($sql) {
             session_start();
             $_SESSION['email'] = $email;
-            $_SESSION['id_usuario'] = $sql->lastInsertId();
-            header("Location: tarefas.php");
+            $_SESSION['id_usuario'] = self::getLastInsertedId($email);
+            header("Location: ".PATH."tarefas");
         }
     }
  

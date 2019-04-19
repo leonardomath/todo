@@ -96,6 +96,7 @@ nav {
     padding: 10px;
     overflow-y: auto;
     word-wrap: break-word;
+    position: relative;
 }
 
 .box {
@@ -104,6 +105,62 @@ nav {
     justify-content: center;
 }
 
+
+.options-open {
+    color: #F79F1F;
+    float: right;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.tarefa .options {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: #044053;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.options-close {
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #fff;
+} 
+
+.tarefa .options form input[type="submit"] {
+    height: 30px;
+    width: 40px;
+    cursor: pointer;
+    font-size: 12px;
+    background: #F2C94C;
+    color: #044053;
+    border: none;
+}
+
+.deletar {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #EA2027;
+    cursor: pointer;
+}
+
+.tarefa .options select {
+    background: #006266;
+    border: none;
+    color: #fff;
+    width: 150px;
+    height: 30px;
+}
 
 ::-webkit-scrollbar {
     width: 7px;
